@@ -1,0 +1,125 @@
+{
+  "summary": {
+    "total": 5,
+    "passed": 2,
+    "failed": 3,
+    "pass_rate": 0.4
+  },
+  "results": [
+    {
+      "id": "defamation_basic",
+      "question": "What is defamation under PPC?",
+      "expected_sections": [
+        "499",
+        "500"
+      ],
+      "retrieved_sections": [
+        "499",
+        "500",
+        "232"
+      ],
+      "answer": "Defamation under the Pakistan Penal Code (PPC) is defined in Section 499. It occurs when a person, by spoken words, signs, or visible representations, makes or publishes any imputation concerning another person with the intention to harm, or knowing or having reason to believe that such imputation will harm, the reputation of that person. This is considered defamation except in certain cases excepted by law. (Section 499)",
+      "retrieval_hit": true,
+      "citation_score": "1/2",
+      "fact_score": "2/3",
+      "forbidden_claims_found": [],
+      "passed": false,
+      "missing_citations": [
+        "500"
+      ],
+      "missing_facts": [
+        3
+      ]
+    },
+    {
+      "id": "robbery_punishment",
+      "question": "What is the punishment for robbery?",
+      "expected_sections": [
+        "392"
+      ],
+      "retrieved_sections": [
+        "392",
+        "393",
+        "397"
+      ],
+      "answer": "The punishment for robbery is rigorous imprisonment for a term which is not fully specified in the provided section 392.",
+      "retrieval_hit": true,
+      "citation_score": "1/1",
+      "fact_score": "2/3",
+      "forbidden_claims_found": [],
+      "passed": false,
+      "missing_citations": [],
+      "missing_facts": [
+        3
+      ]
+    },
+    {
+      "id": "theft_definition",
+      "question": "What constitutes theft under PPC?",
+      "expected_sections": [
+        "378",
+        "379"
+      ],
+      "retrieved_sections": [
+        "411",
+        "379",
+        "410"
+      ],
+      "answer": "Theft under the Pakistan Penal Code (PPC) is defined as the act of committing theft, which is punishable with imprisonment for up to three years, or with a fine, or with both, as per Section 379. However, the specific elements constituting theft are not detailed in the provided sections.",
+      "retrieval_hit": true,
+      "citation_score": "1/2",
+      "fact_score": "0/4",
+      "forbidden_claims_found": [],
+      "passed": false,
+      "missing_citations": [
+        "378"
+      ],
+      "missing_facts": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "criminal_breach_of_trust",
+      "question": "Define criminal breach of trust.",
+      "expected_sections": [
+        "405"
+      ],
+      "retrieved_sections": [
+        "406",
+        "409",
+        "405"
+      ],
+      "answer": "Criminal breach of trust is defined as when a person, being entrusted with property or having dominion over it, dishonestly misappropriates or converts the property to their own use, or dishonestly uses or disposes of it in violation of any law or legal contract regarding the discharge of such trust, or willfully allows another person to do so (Section 405).",
+      "retrieval_hit": true,
+      "citation_score": "1/1",
+      "fact_score": "4/4",
+      "forbidden_claims_found": [],
+      "passed": true,
+      "missing_citations": [],
+      "missing_facts": []
+    },
+    {
+      "id": "forgery_definition",
+      "question": "What is forgery under PPC?",
+      "expected_sections": [
+        "463"
+      ],
+      "retrieved_sections": [
+        "463",
+        "470",
+        "468"
+      ],
+      "answer": "Forgery under the PPC is defined in Section 463 as making any false document or part of a document with the intent to cause damage or injury to the public or any person, to support any claim or title, to cause any person to part with property, to enter into any contract, or with intent to commit fraud or that fraud may be committed.",
+      "retrieval_hit": true,
+      "citation_score": "1/1",
+      "fact_score": "3/3",
+      "forbidden_claims_found": [],
+      "passed": true,
+      "missing_citations": [],
+      "missing_facts": []
+    }
+  ]
+}
