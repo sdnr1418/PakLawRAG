@@ -279,15 +279,86 @@ def retrieve_evidence(question: str, k: int):
     vectorstore = load_vectorstore()
     docs_and_scores = vectorstore.similarity_search_with_score(question, k=k)
     
-    # Explicit section retrieval for common legal queries
+    # Comprehensive term mapping for Urdu legal terminology
     keywords_to_sections = {
-        "murder": "302",
+        # ── Intentional killing (murder) ──────────────────────────────────────────
+        "qatl-i-amd": "302",
+        "qatl i amd": "302",
+        "qatl-e-amd": "302",
+        "qatl-e amd": "302",
+        
+        # ── Semi-intentional killing ───────────────────────────────────────────────
+        "qatl shibh-i-amd": "304",
+        "qatl shibh i amd": "304",
+        "qatl-e-shibh-i-amd": "304",
+        
+        # ── Culpable homicide ────────────────────────────────────────────────────
+        "qatl-i-khata": "304",
+        "qatl i khata": "304",
+        "qatl-e-khata": "304",
+        
+        # ── Killing by indirect cause ─────────────────────────────────────────────
+        "qatl-bis-sabab": "304",
+        "qatl bis sabab": "304",
+        
+        # ── Generic qatl (murder / homicide) ──────────────────────────────────────
         "qatl": "302",
+        "murder": "302",
+        "homicide": "302",
+        "killing": "302",
+        
+        # ── Blood money / compensation ────────────────────────────────────────────
+        "diyat": "302",
+        "arsh": "337",
+        "daman": "337",
+        
+        # ── Retaliation ───────────────────────────────────────────────────────────
+        "qisas": "302",
+        
+        # ── Punishment types ──────────────────────────────────────────────────────
+        "ta'zir": "53",
+        "tazir": "53",
+        "hadd": "53",
+        
+        # ── Pardon / settlement ───────────────────────────────────────────────────
+        "afw": "309",
+        "sulh": "309",
+        
+        # ── Wound / hurt series ───────────────────────────────────────────────────
+        "shajjah": "337",
+        "jurh": "337",
+        "jaifah": "337",
+        "ghayr-jaifah": "337",
+        "ghayr jaifah": "337",
+        "zirh": "337",
+        
+        # ── Organ destruction ─────────────────────────────────────────────────────
+        "itlaf-i-salahiyyat-i-udw": "337",
+        "itlaf-i-udw": "337",
+        "itlaf": "337",
+        
+        # ── Grievous hurt ────────────────────────────────────────────────────────
+        "grievous hurt": "337",
+        "jhugna": "337",
+        
+        # ── Common offenses (English + Urdu) ────────────────────────────────────
         "rape": "376",
+        "zinaa": "377",
         "dacoity": "396",
+        "dacoity": "390",
         "theft": "378",
+        "chor": "378",
         "assault": "354",
+        "hamlah": "354",
         "robbery": "390",
+        "looting": "390",
+        "fasad-fil-arz": "505",
+        "fasad fil arz": "505",
+        
+        # ── Abortion ──────────────────────────────────────────────────────────────
+        "isqat-i-janin": "318",
+        "isqat-i-hamal": "312",
+        "isqat": "312",
     }
     
     # Check if question contains keywords and add that section
