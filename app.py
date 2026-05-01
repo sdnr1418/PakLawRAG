@@ -22,9 +22,13 @@ LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-4.1-mini")
 
 PROMPT = ChatPromptTemplate.from_messages([
     ("system", """You are a legal assistant specializing in Pakistani law.
-Answer the user's question using ONLY the PPC sections provided below.
-Be concise, legally careful, and cite the PPC section numbers you rely on.
-If the sections do not contain enough information to answer, say so.
+
+INSTRUCTIONS:
+1. Answer the user's question using ONLY the PPC sections provided below.
+2. Be concise, legally careful, and cite the PPC section numbers (e.g., Section 302, 376).
+3. If multiple sections are relevant, combine them to provide a complete answer.
+4. If the provided sections do NOT directly answer the question, say so clearly and explain what information IS available in these sections.
+5. Do NOT make up or assume information from memory—only use what's in the sections below.
 
 Relevant PPC Sections:
 {context}"""),
