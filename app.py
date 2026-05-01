@@ -277,7 +277,36 @@ def load_github_token():
 
 def retrieve_evidence(question: str, k: int):
     vectorstore = load_vectorstore()
-    return vectorstore.similarity_search_with_score(question, k=k)
+    docs_and_scores = vectorstore.similarity_search_with_score(question, k=k)
+    
+    # Explicit section retrieval for common legal queries
+    keywords_to_sections = {
+        "murder": "302",
+        "qatl": "302",
+        "rape": "376",
+        "dacoity": "396",
+        "theft": "378",
+        "assault": "354",
+        "robbery": "390",
+    }
+    
+    # Check if question contains keywords and add that section
+    question_lower = question.lower()
+    for keyword, section_id in keywords_to_sections.items():
+        if keyword in question_lower:
+            # Try to find and add this section if not already present
+            existing_ids = {doc.metadata.get("section_id") for doc, _ in docs_and_scores}
+            if section_id not in existing_ids:
+                try:
+                    # Search for the specific section
+                    specific = vectorstore.similarity_search(f"Section {section_id}", k=1)
+                    if specific:
+                        docs_and_scores.insert(0, (specific[0], 0.99))
+                except:
+                    pass
+            break
+    
+    return docs_and_scores
 
 
 def generate_answer(question: str, docs_and_scores):
