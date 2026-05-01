@@ -282,10 +282,10 @@ def retrieve_evidence(question: str, k: int):
     # Comprehensive term mapping for Urdu legal terminology
     keywords_to_sections = {
         # ── Intentional killing (murder) ──────────────────────────────────────────
-        "qatl-i-amd": "302",
-        "qatl i amd": "302",
-        "qatl-e-amd": "302",
-        "qatl-e amd": "302",
+        "qatl-i-amd": "324",
+        "qatl i amd": "324",
+        "qatl-e-amd": "324",
+        "qatl-e amd": "324",
         
         # ── Semi-intentional killing ───────────────────────────────────────────────
         "qatl shibh-i-amd": "304",
@@ -302,10 +302,10 @@ def retrieve_evidence(question: str, k: int):
         "qatl bis sabab": "304",
         
         # ── Generic qatl (murder / homicide) ──────────────────────────────────────
-        "qatl": "302",
-        "murder": "302",
-        "homicide": "302",
-        "killing": "302",
+        "qatl": "324",
+        "murder": "324",
+        "homicide": "324",
+        "killing": "324",
         
         # ── Blood money / compensation ────────────────────────────────────────────
         "diyat": "302",
